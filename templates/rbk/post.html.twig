@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>{{ post.getTitle() }}</h4>
+                {% if post.getPhoto() != '' %}
+                    <div>
+                        <img src="{{ post.getPhoto() }}" class="photo">
+                    </div>
+                {% endif %}
+                <div>{{ post.getBody() }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+{% endblock %}

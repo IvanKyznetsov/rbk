@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% for post in news %}
+                    <div>
+                        <h4>{{ post.getTitle() }}</h4>
+                        <div>
+                            {{ post.getSliceBody() }}
+                            <a href="{{ path('app_rbk_post', {id: post.getId()}) }}">Подробней</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
