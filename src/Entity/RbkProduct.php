@@ -37,7 +37,7 @@ class RbkProduct implements ProductInterface
     /**
      * @var string
      *
-     * @ORM\Column(length=5000)
+     * @ORM\Column(length=30000)
      */
     private string $body;
 

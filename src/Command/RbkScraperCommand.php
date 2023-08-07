@@ -117,7 +117,7 @@ class RbkScraperCommand extends AbstractScraperCommand
             return '';
         }
 
-        return $titleNode->first()->text();
+        return mb_convert_encoding($titleNode->first()->text(), 'UTF-8');
     }
 
     /**
@@ -133,7 +133,7 @@ class RbkScraperCommand extends AbstractScraperCommand
             $body .= $body === '' ? $node->textContent : ' '.$node->textContent;
         }
 
-        return $body;
+        return mb_convert_encoding($body, 'UTF-8');
     }
 
     /**
