@@ -1,16 +1,28 @@
 RBK
 ==============
 
-Прописать явки до базы в .env файле
-
-composer install
-
+Installation
+------------
+**1.** Step
+```bash
+docker-compose build
+```
+**2.** Step
+```bash
+docker-compose up
+```
+**3.** Step in php container
+```bash
 php bin/console doctrine:migrations:migrate
+```
 
-bin/console rbkScraper 1 #Запуск первого мода, собирающиего url новостей 
-
-bin/console rbkScraper 2 #Запуск второго мода, который идет по собранным url
-
-/rbk/news #Все новости
-
-/rbk/post/{id} #Страница котнкретной новости
+Run Scraper
+------------
+**1.** Step in php container (run mode 1 for collect urls)
+```bash
+php bin/console rbkScraper 1
+```
+**2.** Step in php container (run mode 2 for scrape urls)
+```bash
+php bin/console rbkScraper 2
+```
